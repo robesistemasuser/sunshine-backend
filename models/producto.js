@@ -1,4 +1,5 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Collection } = require("mongoose");
+const grado = require("./grado");
 
 
 const ProductoSchema = Schema({
@@ -12,22 +13,33 @@ const ProductoSchema = Schema({
         required: true
 
     },
-    variedad: {
-        type: String,
-        required: true
-    },
-    grado: {
-        type: String,
-        required: true
-    },
-    imagenUrl: {
+    
+    img: {
         type: String,
     }, 
-});
+
+    usuario:{
+        required: true,
+        type: Schema.Types.ObjectId,
+        ref: "Usuario"
+
+    },
+
+    variedad: [{
+        
+        type: Schema.Types.ObjectId,
+        ref: "Variedad"
+    }],
+
+    grado: [{
+        
+        type: Schema.Types.ObjectId,
+        ref: "Grado"
+    }],
+}, { Collection: 'productos' });
 
 ProductoSchema.method('toJSON', function() {
-    const { __v, _id, ...object } = this.toObject();
-    object.uid = _id;
+    const { __v, ...object } = this.toObject();
     return object;
 })
 

@@ -15,8 +15,12 @@ app.use(express.json());
 dbConnection();
 
 app.use("/api/usuarios", require("./routes/usuarios"));
+app.use("/api/variedades", require("./routes/variedades"));
+app.use("/api/grados", require("./routes/grados"));
 app.use("/api/productos", require("./routes/productos"));
+app.use("/api/todo", require("./routes/busquedas"));
 app.use("/api/login", require("./routes/auth"));
+app.use("/api/upload", require("./routes/uploads"));
 
 
 
