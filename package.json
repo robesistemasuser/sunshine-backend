@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon index.js"
+    "start:dev": "nodemon index.js",
+    "build": "rimraf dist && mkdir dist && cp -r * dist && rm -rf dist/node_modules"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.3",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
   }
 }
