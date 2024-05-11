@@ -3,6 +3,10 @@ const grado = require("./grado");
 
 
 const ProductoSchema = Schema({
+    id_producto: {
+        type: String,
+        required: true
+    },
     
     nombre: {
         type: String,

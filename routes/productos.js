@@ -13,10 +13,11 @@ router.get('/', /* validarJWT, */ getProductos);
 router.post('/', 
 [
    validarJWT,
+   check('id_producto','El nombre del producto es necesario').not().isEmpty(),
    check('nombre','El nombre del producto es necesario').not().isEmpty(),
    check('especie','la especie del producto es necesario').not().isEmpty(),
-   check('variedad','La variedada id debe ser es valido').isMongoId(),
-   check('grado','El grado id debe ser es valido').isMongoId(),
+   /* check('variedad','La variedada id debe ser es valido').isMongoId(),
+   check('grado','El grado id debe ser es valido').isMongoId(), */
 
    validarCampos
   
