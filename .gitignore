@@ -1,4 +1,15 @@
 
-
-
 node_modules/
+
+
+uploads/productos/**.jpg
+uploads/productos/**.png
+uploads/productos/**.gif
+
+uploads/usuarios/**.jpg
+uploads/usuarios/**.png
+uploads/usuarios/**.gif
+
+uploads/variedades/**.jpg
+uploads/variedades/**.png
+uploads/variedades/**.gif
